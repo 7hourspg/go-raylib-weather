@@ -29,22 +29,6 @@ type WeatherData struct {
 	FeelsLike   int
 }
 
-type OpenWeatherResponse struct {
-	Name string `json:"name"`
-	Main struct {
-		Temp      float32 `json:"temp"`
-		FeelsLike float32 `json:"feels_like"`
-		Humidity  int     `json:"humidity"`
-	} `json:"main"`
-	Weather []struct {
-		Main        string `json:"main"`
-		Description string `json:"description"`
-	} `json:"weather"`
-	Wind struct {
-		Speed float32 `json:"speed"`
-	} `json:"wind"`
-}
-
 // FETCH WEATHER DATA FUNCTION
 func fetchWeatherData(cityName string) (WeatherData, error) {
 	var weather WeatherData
